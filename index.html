@@ -11,149 +11,350 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-    * {
-      font-family: "Shizuru", cursive;
-      box-sizing: border-box;
-    }
+* {
+  font-family: "Shizuru", cursive;
+  box-sizing: border-box;
+}
 
-    li {
-      list-style-type: none;
-    }
 
-    li span {}
+img {
+  width: 10px;
+  height: 10px;
+}
 
-    img {
-      width: 10px;
-      height: 10px;
-    }
+body {
+  weight: 60vh;
+  height: 60vh;
+  color: black;
+  margin: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
 
-    body {
-      weight: 60vh;
-      height: 60vh;
-      color: black;
-      margin: auto;
-      margin-left: 20%;
-      margin-right: 20%;
-      margin-top: 10%;
-      margin-bottom: 10%;
-    }
+body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-    body::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+.Your-Result {
+  text-align: center;
+  margin-top: 10%;
+  color: white;
+}
 
-    .Your-Result {
-      text-align: center;
-      margin-top: 10%;
-      color: white;
-    }
+.ResultTitle {
+  margin-bottom: 10%;
+}
 
-    .ResultTitle {
-      margin-bottom: 10%;
-    }
+.Score-Result {
+  height: 160px;
+  width: 160px;
+  line-height: 60px;
+  -moz-border-radius: 120px;
+  border-radius: 120px;
+  background-image: linear-gradient(
+    179deg,
+    #3f0cbbff 0%,
+    #450ecaff 32%,
+    #450eca00 99%
+  );
+  padding-left: 15px;
+  padding-top: 35px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .Score-Result {
-      height: 160px;
-      width: 160px;
-      line-height: 60px;
-      -moz-border-radius: 120px;
-      border-radius: 120px;
-      background-image: linear-gradient(179deg, #3F0CBBFF 0%, #450ECAFF 32%, #450ECA00 99%);
-      padding-left: 15px;
-      padding-top: 35px;
-      padding-right: 15px;
-      padding-bottom: 15px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.Your-Result .Score {
+  font-size: 55px;
+}
 
-    .Your-Result .Score {
-      font-size: 55px;
-    }
+.Percentage {
+  opacity: 0.5;
+}
 
-    .Percentage {
-      opacity: 0.5;
-    }
+.Evaluation {
+  margin-top: 5%;
+  font-size: 25px;
+}
 
-    .Evaluation {
-      margin-top: 5%;
-      font-size: 25px;
-    }
+.Details {
+  opacity: 0.7;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
 
-    .Details {
-      opacity: 0.7;
-      margin-left: 15%;
-      margin-right: 15%;
-      margin-top: 5%;
-      margin-bottom: 10%;
-    }
+.Summary {
+  margin-top: 8%;
+  margin-left: 8%;
+  height: 10%;
+}
 
-    .Reaction {}
+.Continue {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  margin-left: 8%;
+  padding-right: 5%;
+}
+.Continue button {
+  width: 85%;
+  color: white;
+  border: none;
+  text-align: center;
+  background: #696969;
+  line-height: 60px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+button:hover,
+button:focus-visible {
+  background-image: linear-gradient(206deg, #a100ffff 0%, #5a16feff 26%);
+}
 
-    .Background-left {
-      width: 50%;
-      height: 100%;
-      float: left;
-      background-image: linear-gradient(206deg, #A100FFFF 0%, #5A16FEFF 26%);
-      -moz-border-radius: 20px;
-      border-radius: 20px;
-      padding: 0px;
-    }
+.wrapper {
+  display: grid;
+  gap: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.Item {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  background-color: #FFF8DC;
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.Reaction  .Item {
+  background-color: #ffe8ec;
+;
+}
+.Memory  .Item {
+  background-color: #fdfbed;
+}
+.Verbal  .Item {
+  background-color: #d3f8f6;
+}
+.Visual  .Item {
+  background-color: #dbd6fa;
+}
+.Aspect {
+  width: 140px;
+}
+.Reaction  .Aspect {
+  color: #FFC0CB;
+;
+}
+.Memory  .Aspect {
+  color: #F0E68C;
+}
+.Verbal  .Aspect {
+  color: #20B2AA;
+}
+.Visual  .Aspect {
+  color: #7B68EE;
+}
 
-    .Background-right {
-      width: 50%;
-      height: 100%;
-      float: left;
-      background-color: lightblue;
-      padding: 0px;
-    }
-    @media screen and (max-width: 1000px) {
-      body {
-        weight: 60vh;
-        height: 60vh;
-        color: black;
-        margin: auto;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-    }
-    @media screen and (max-width: 600px) {
+.Symbol {
+  /*   width: 15%; */
+  /*   border-spacing: 100; */
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*   border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+}
+.Symbol img {
+  width: 30px;
+  height: 30px;
+}
+.Value {
+  text-align:right;
+  padding-left: 35%;
+  padding-right: 5%;
+  width: 15%;
+}
+.Percent {
+  text-align:right;
+  padding-right: 5%;
+/*   border-top-right-radius: 10px; */
+/*   border-bottom-right-radius: 10px; */
+  width: 45%;
+  color: gray;
+}
 
-      .Background-left,
-      .Background-right {
-        width: 100%;
-        height: auto;
-      }
-      body {
-        weight: 60vh;
-        height: 60vh;
-        color: black;
-        margin: auto;
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top: 0%;
-        margin-bottom: 0%;
-    }
-    }
+.Background-left {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-image: linear-gradient(206deg, #a100ffff 0%, #5a16feff 26%);
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 0px;
+}
 
-    .Aspect {
-      width: 12px;
-    }
+.Background-right {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: white;
+  padding: 0px;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 5px 5px #e6e6fa;
+}
+@media screen and (max-width: 800px) {
+  body {
+    weight: 60vh;
+    height: 60vh;
+    color: black;
+    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .Continue {
+  width: 100%;
+  margin-top: 20%;
+  margin-bottom: 8%;
+  margin-left: 8%;
+  padding-right: 5%;
+}
+}
+@media screen and (max-width: 600px) {
+  .Background-left {
+    width: 100%;
+    height: auto;
+    -moz-border-radius: 10px;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .Background-right {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+  body {
+    weight: 60vh;
+    height: 60vh;
+    color: black;
+    margin: auto;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+  .Your-Result {
+    text-align: center;
+    margin-top: 0%;
+    color: white;
+  }
 
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
+  .ResultTitle {
+    margin-bottom: 0%;
+  }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
+  .Score-Result {
+    height: 160px;
+    width: 160px;
+    line-height: 60px;
+    -moz-border-radius: 120px;
+    border-radius: 120px;
+    background-image: linear-gradient(
+      179deg,
+      #3f0cbbff 0%,
+      #450ecaff 32%,
+      #450eca00 99%
+    );
+    padding-left: 15px;
+    padding-top: 35px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Your-Result .Score {
+    font-size: 55px;
+  }
+
+  .Percentage {
+    opacity: 0.5;
+  }
+
+  .Evaluation {
+    margin-top: 0%;
+    font-size: 25px;
+  }
+
+  .Details {
+    opacity: 0.7;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+  }
+  .Symbol {
+  /*   width: 15%; */
+  /*   border-spacing: 100; */
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*   border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+  }
+  .Symbol img {
+    width: 30px;
+    height: 30px;
+  }
+  .Value {
+    padding-left: 35%;
+    width: 15%;
+  }
+  .Percent {
+    text-align:right;
+    padding-right: 5%;
+    width: 55%;
+    color: gray;
+  }
+    .Summary {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-left: 8%;
+    height: 10%;
+  }
+    .Continue {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 5%;
+    margin-left: 10%;
+  }
+}
+
+.Aspect {
+  width: 12px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
   </style>
 </head>
 
@@ -180,47 +381,56 @@
       </div>
     </div>
   </div>
-  <div class=Background-right>
-    <ol>
-      <li class="Reaction">
+  <div class="Background-right">
+    <div class="Summary">Summary</div>
+    <div class="wrapper">
 
-        <div class="Item"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤">
+      <div class="Reaction">
+
+        <div class="Item">
+          <span class="Symbol"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤"></span>
           <span class="Aspect">Reaction</span>
           <span class="Value" style="font-weight:bold;color:black;">80</span>
-          <span class ="Percent" style="color:gray;">/ 100</span>
+          <span class="Percent" style="color:gray;">/ 100</span>
 
         </div>
-      </li>
-      <li class="Verbal">
-
-        <div class="Item"> <img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤"> <span class="Aspect">Verbal</span> <span class="Value" style="font-weight:bold;color:black;"> 61</span>
-          <span class ="Percent" style="color:gray;">/ 100</span>
-
-        </div>
-      </li>
-      <li class="Visual">
+      </div>
+      <div class="Verbal">
 
         <div class="Item">
-          <img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤">
+          <span class="Symbol"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤"></span>
+          <span class="Aspect">Verbal</span> <span class="Value" style="font-weight:bold;color:black;"> 61</span>
+          <span class="Percent" style="color:gray;">/ 100</span>
+
+        </div>
+      </div>
+      <div class="Visual">
+
+        <div class="Item">
+          <span class="Symbol"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤"></span>
           <span class="Aspect">Visual</span>
           <span class="Value" style="font-weight:bold;color:black;">92</span>
-          <span class ="Percent" style="color:gray;">/ 100</span>
+          <span class="Percent" style="color:gray;">/ 100</span>
 
         </div>
-      </li>
-      <li class="Memory">
+      </div>
+      <div class="Memory">
 
         <div class="Item">
-          
-          <span class="Aspect" style="float: left;"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤">Memory</span>
-          <span class="Value" style="float: right;">72</span>
-          <span class ="Percent" style="color:gray;float: right;">/ 100</span>
+          <span class="Symbol"><img src="https://th.bing.com/th/id/R.62adac6b7490ad6c3081e95684a4a1e9?rik=uCWHi7AxgIl%2bIQ&pid=ImgRaw&r=0" alt="⬤"></span>
+          <span class="Aspect">Memory</span>
+          <span class="Value">72</span>
+          <span class="Percent" style="color:gray;">/ 100</span>
 
         </div>
 
-      </li>
-    </ol>
-    <div class="Continue">Continue</div>
+      </div>
+
+    </div>
+    <div class="Continue">
+      <button type="button">Continue</button>
+    </div>
+
   </div>
 
   <footer class="attribution">
